@@ -1,0 +1,124 @@
+.product-details-frame {
+    margin: 1rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    position: relative;
+}
+
+.liked {
+    position: absolute;
+    width: 54px;
+    top: 20px;
+    right: 20px;
+}
+
+.product-details {
+    display: flex;
+    background: var(--dark-lightest);
+    padding: 2rem;
+    width: 100%;
+    color: var(--light);
+    border-radius: var(--soft-border);
+}
+
+.detail-img {
+    width: 300px;
+}
+
+.details-1 {
+    padding: 0.5rem 3rem;
+}
+
+.details-1 h2 {
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.details-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.2;
+}
+
+.details-2 > div {
+    padding: 0.5rem;
+}
+
+.add-or-remove-btns {
+    display: flex;
+    align-items: center;
+    font-size: 26px;
+    padding: 0 0 1rem 0;
+
+}
+
+.decrement-btn {
+    margin-right: 0.5rem;
+}
+
+.increment-btn {
+    margin-left: 0.5rem;
+}
+
+.add-or-remove-btns button {
+    background: var(--tertiary);
+    width: 35px;
+    height: 35px;
+    font-size: 26px;
+    color: var(--dark);
+    border-radius: var(--soft-border);
+    transition: var(--transition);
+}
+
+.add-or-remove-btns button:hover {
+    background: var(--tertiary-accent);
+}
+
+.decrement-btn:disabled, .increment-btn:disabled {
+    background: var(--disabled);
+}
+
+.decrement-btn:disabled:hover,
+.increment-btn:disabled:hover {
+    background-color: var(--disabled);
+    cursor: default; 
+}
+
+.cart-rep {
+    margin-left: 0.7rem;
+    width: 35px;
+}
+
+@media (max-width: 860px) {
+    .product-details {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .details-2 {
+        align-items: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .detail-img {
+        width: 250px;
+    }
+}
+
+@media (max-width: 350px) {
+    .detail-img {
+        width: 200px;
+    }
+}
+
+@media (max-width: 300px) {
+    .product-details-frame {
+        width: 100%;
+        margin: 0.5rem auto;
+    }
+}

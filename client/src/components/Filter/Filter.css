@@ -1,0 +1,41 @@
+.filter {
+    display: flex;
+}
+
+.selector {
+    display: flex;
+    align-items: center;
+}
+
+.filter h3 {
+    margin-right: 0.5rem;
+}
+
+.filter input, .filter select {
+    padding: 0.7rem;
+    border-radius: var(--soft-border);
+    margin-bottom: 0.35rem;
+    font-size: 17px;
+}
+
+.filter input {
+    background: var(--light);
+    margin-left: 1rem;
+}
+
+.filter select {
+    background: var(--dark-medium);
+    color: var(--light);
+    text-align: center;
+}
+
+@media (max-width: 500px) {
+    .filter {
+        flex-direction: column;
+    }
+
+    .filter input {
+        margin: 0.2rem auto 0.5rem auto;
+        width: 100%;
+    }
+}

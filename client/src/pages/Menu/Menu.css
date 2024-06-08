@@ -1,0 +1,76 @@
+.main-menu {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.infos {
+    cursor: pointer;
+    width: 100%;
+    background-color: var(--dark-lightest);
+    margin: 0.5rem;
+    display: flex;
+    color: var(--light);
+    border-radius: var(--soft-border);
+    transition: opacity 0.3s ease;
+}
+
+.infos:hover {
+    opacity: 0.9;
+}
+
+.pizza-info {
+    margin-top: 1rem;
+}
+
+.drinks-info {
+    margin-bottom: 1rem;
+}
+
+.infos img {
+    height: 300px;
+    border-top-left-radius: var(--soft-border);
+    border-bottom-left-radius: var(--soft-border);
+}
+
+.infos div {
+    width: 100%;
+}
+
+.infos h2 {
+    text-align: center;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.infos p {
+    font-size: 20px;
+    padding:  0.5rem 2rem;
+}
+
+@media (max-width: 1000px) {
+    .infos {
+        flex-direction: column;
+    }
+
+    .infos img {
+        width: 90%;
+        height: auto;
+        margin: 2rem auto 0.5rem auto;
+    }
+
+    .infos div {
+        margin-bottom: 1.5rem;
+        line-height: 0.9;
+    }
+}
+
+@media (max-width: 500px) {
+    .infos p {
+        font-size: 17px;
+    }
+}

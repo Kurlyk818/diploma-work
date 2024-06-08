@@ -1,0 +1,7 @@
+.added-product-notice {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 1rem;
+    font-size: 18px;
+    border-radius: var(--soft-border);
+    position: fixed;
+}

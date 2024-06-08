@@ -1,0 +1,21 @@
+.table-product-img {
+    width: 40px;
+}
+
+.table-prod-delete {
+    background: var(--dark) !important;
+    color: var(--light) !important;
+}
+
+.table-prod-delete:hover {
+    background: var(--secondary-accent) !important;
+}
+
+.table-input {
+    background: var(--light);
+    padding: 0.5rem;
+    font-size: 20px;
+    width: 90%;
+    text-align: center;
+    border-radius: var(--soft-border);
+}

@@ -1,0 +1,19 @@
+.admin {
+    margin: 1rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 95%;
+    max-width: 1200px;
+    border-radius: var(--soft-border);
+}
+
+@media (max-width: 520px) {
+    .admin {
+        width: 100%;
+    }
+}
+
+
+

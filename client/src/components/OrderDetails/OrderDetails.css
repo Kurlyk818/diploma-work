@@ -1,0 +1,26 @@
+.order-details {
+    height: 100%;
+    margin: 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.order-summary, .voucher {
+    background: var(--cart);
+    border-radius: var(--soft-border);
+    padding: 1rem;
+    width: 450px;
+}
+
+@media (max-width: 470px) {
+    .order-details {
+        width: 98%;
+    }
+    
+    .order-details, .order-summary, .voucher {
+        width: 100%;
+    }
+}
+

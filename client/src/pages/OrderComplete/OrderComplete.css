@@ -1,0 +1,12 @@
+.order-complete {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.order-basket-img {
+    width: 300px;
+}
+
+.order-complete h2 {
+    font-size: 32px;
+}

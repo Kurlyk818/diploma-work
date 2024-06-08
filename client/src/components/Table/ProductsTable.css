@@ -1,0 +1,49 @@
+.products-table {
+    width: 100%;
+    font-size: 20px;
+}
+
+.products-table thead tr {
+    width: 100%;
+}
+
+.products-table thead tr th {
+    padding: 1rem;
+    text-align: center;
+    background: var(--dark);
+    color: var(--light);
+}
+
+.products-table tbody {
+    background: var(--medium);
+    color: var(--light);
+}
+
+.products-table tbody tr td {
+    padding: 0.1rem;
+    text-align: center;
+}
+
+.products-table tbody tr:first-of-type td:first-of-type {
+    padding-top: 0.4rem;
+}
+
+.products-table tfoot {
+    width: 100%;
+}
+
+@media (max-width: 700px) {
+    .table-detail {
+        display: none;
+    }
+}
+
+@media (max-width: 540px) {
+    .products-table {
+        font-size: 17px;
+    }
+
+    .table-detail-2 {
+        display: none;
+    }
+}

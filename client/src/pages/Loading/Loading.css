@@ -1,0 +1,19 @@
+.notice {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.loading-image {
+    animation: rotate 10s linear infinite;
+    width: 230px;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

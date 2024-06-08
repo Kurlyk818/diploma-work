@@ -1,0 +1,110 @@
+.creator-frame {
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    max-width: 650px;
+}
+
+.creator-frame h2 {
+    text-align: center;
+    margin-bottom: 0.8rem;
+}
+
+.creator-form {
+    background: var(--cart);
+    padding: 2rem;
+    border-radius: var(--soft-border);
+    font-size: 20px;
+}
+
+.creator-div, .item-list, .adder-div {
+    margin-bottom: 0.5rem;
+}
+
+.creator-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.creator-div input, .adder-div-div input {
+    background: var(--light);
+    width: 80%;
+    padding: 0.6rem;
+    font-size: 20px;
+    border-radius: var(--soft-border);
+}
+
+.item-list {
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.item-list > p {
+    margin-bottom: 0.5rem;
+}
+
+.item-list span {
+    padding: 0.5rem 0.7rem;
+    margin-left: 0.5rem;
+    background: var(--tertiary);
+    border-radius: var(--soft-border);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.adder-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.adder-div-div {
+    width: 80%;
+}
+
+.listing {
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 1.8;
+}
+
+.listing p {
+    margin-right: 0.5rem;
+}
+
+.listing p:not(:last-of-type)::after {
+    content: ",";
+}
+
+.creator-submit {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+@media (max-width: 670px) {
+    .creator-div, .adder-div {
+        flex-direction: column;
+    }
+
+    .creator-div label, .adder-div label {
+        margin-bottom: 0.2rem;
+    }
+
+    .creator-div input, .adder-div-div {
+        width: 95%;
+    }
+}
+
+@media (max-width: 460px) {
+    .creator-div input, .adder-div-div {
+        width: 100%;
+    }
+
+    .creator-form {
+        padding: 1rem;
+    }
+}

@@ -1,0 +1,10 @@
+.orders-frame {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.orders-frame h2 {
+    margin-bottom: 0.5rem;
+}

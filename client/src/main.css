@@ -1,0 +1,89 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    font-family: inherit;
+}
+ol,
+ul,
+li {
+    list-style: none;
+    display: block;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+input,
+textarea,
+select,
+button,
+input {
+    appearance: none;
+    border-radius: 0;
+}
+
+button,
+a {
+    cursor: pointer;
+    color: inherit;
+}
+textarea {
+    resize: none;
+}
+
+:root {
+    --primary: rgb(53, 27, 68);
+    --secondary: rgb(192, 145, 95);
+    --tertiary: rgb(237,155,66);
+    --primary-accent: rgb(130, 26, 27);
+    --secondary-accent: rgb(27,25,25);
+    --tertiary-accent: rgb(201, 104, 66);
+    --linear: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+    --linear-secondary: linear-gradient(120deg, rgba(54,47,47,0.8) 0%, rgba(32,28,32,1) 100%);
+    --tertiary-linear: linear-gradient(180deg, rgba(54,47,47,0) 0%, rgba(32,28,32,0.43821721311475414) 50%, rgba(54,47,47,0) 100%);
+    --light: white;
+    --dark: rgb(0, 0, 0);
+    --dark-hover: rgb(14, 5, 14);
+    --dark-medium: rgb(32, 28, 32);
+    --dark-lightest: rgb(54, 47, 47);
+    --medium: rgba(54, 47, 47, 0.9);
+    --disabled: gray;
+    --cart: rgb(236, 221, 170);
+    --success: rgb(48, 95, 48);
+    --soft-border: 5px;
+    --transition: all 0.3s ease;
+}
+
+html, body {
+    background: var(--primary);
+    background: var(--secondary);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#root {
+  font-family: "Josefin Sans", sans-serif;
+  height: 100%;   
+}
+
+.base-btn {
+    background: var(--tertiary);
+    font-size: 17px;
+    padding: 0.7rem 0.5rem;
+    border-radius: var(--soft-border);
+    color: var(--dark);
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.base-btn:hover {
+    background: var(--tertiary-accent);
+}

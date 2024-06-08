@@ -1,0 +1,9 @@
+.reviews-frame h2 {
+    margin-bottom: 1rem;
+}
+
+.reviews {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}

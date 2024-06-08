@@ -1,0 +1,44 @@
+.footer {
+    padding: 1.5rem 0 1rem 0;
+}
+
+.footer-line {
+    width: 100%;
+    height: 2px;
+    background-color: var(--dark-lightest);
+}
+
+.large-logo-img {
+    width: 300px;
+    margin-right: 1.5rem;
+}
+
+@media (max-width: 800px) {
+    .large-logo-img {
+        display: none;
+    }
+}
+
+.extras {
+    display: flex;
+    padding-top: 1.5rem;
+}
+
+.extra-link-lists {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.extra-list {
+    margin: 0.3rem;
+}
+
+.extra-list ul li a {
+    transition: var(--transition);
+}
+
+.extra-list ul li a:hover {
+    color: var(--primary-accent);
+}

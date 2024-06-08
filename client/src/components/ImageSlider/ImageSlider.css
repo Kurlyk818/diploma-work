@@ -1,0 +1,77 @@
+.banner {
+    position: relative;
+    overflow: hidden;
+    padding-top: 1rem;
+}
+
+.imgs-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+}
+
+.banner-img {
+    width: 100%;
+    border-radius: var(--soft-border);
+    transition: translate 300ms ease-in-out;
+}
+
+.control-arrow {
+    width: 100%;
+}
+
+.control-div {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.3);
+    background: var(--tertiary-linear);
+    top: 1rem;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    cursor: pointer;
+    width: 5%;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.control-div:hover {
+    opacity: 1;
+}
+
+.div-left {
+    left: 0;
+}
+
+.div-right {
+    right: 0;
+}
+
+.control-btns {
+    position: absolute;
+    bottom: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 0.25rem;
+}
+
+.control-btns button {
+    padding: 0.25rem;
+}
+
+.control-btns button:hover,
+.control-btns button:focus-visible {
+    scale: 1.2;
+}
+
+.control-btns button img {
+    width: 15px;
+}
+
+@media (max-width: 400px) {
+    .control-btns {
+        bottom: 0.2rem;
+    }
+}
