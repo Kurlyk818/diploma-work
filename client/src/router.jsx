@@ -1,4 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
+// import { useSelector } from "react-redux";
+
 import About from "./pages/About/About";
 import Navbar from "./components/Navigation/Navbar";
 import ErrorPage from "./pages/Error/ErrorPage";
@@ -16,73 +18,82 @@ import ProductDetails from "./pages/ProductDetails/ProductDetails";
 import OrderComplete from "./pages/OrderComplete/OrderComplete";
 import ProductCreator from "./pages/ProductCreator/ProductCreator";
 import SelectedOrder from "./pages/SelectedOrder/SelectedOrder";
+import LoginPage from "./pages/Login/Login";
+
 
 export const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <Navbar />,
-        errorElement: <ErrorPage />,
-        children: [
-            {
-                index: true,
-                element: <About />
-            },
-            {
-                path: "/pizza",
-                element: <Pizza />
-            },
-            {
-                path: "/menu",
-                element: <Menu />
-            },
-            {
-                path: "/desserts",
-                element: <Desserts />
-            },
-            {
-                path: "/salads",
-                element: <Salads />
-            },
-            {
-                path: "/drinks",
-                element: <Drinks />
-            },
-            {
-                path: "/product-details",
-                element: <ProductDetails />
-            },
-            {
-                path: "/favorites",
-                element: <Favorites />
-            },
-            {
-                path: "/client",
-                element: <Client />
-            },
-            {
-                path: "/admin",
-                element: <Admin />
-            },
-            {
-                path: "/cart",
-                element: <Cart />
-            },
-            {
-                path: "/order-complete",
-                element: <OrderComplete />
-            },
-            {
-                path: "/selected-order",
-                element: <SelectedOrder />
-            },
-            {
-                path: "/create-product",
-                element: <ProductCreator />
-            },
-            {
-                path: "*",
-                element: <PageNotFound />
-            }
-        ]
-    }
-])
+  {
+    path: "/",
+    element: <Navbar />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        index: true,
+        element: <About />,
+      },
+      {
+        path: "/pizza",
+        element: <Pizza />,
+      },
+      { path: "/login",
+        element: <LoginPage />
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/menu",
+        element: <Menu />,
+      },
+      {
+        path: "/desserts",
+        element: <Desserts />,
+      },
+      {
+        path: "/salads",
+        element: <Salads />,
+      },
+      {
+        path: "/drinks",
+        element: <Drinks />,
+      },
+      {
+        path: "/product-details",
+        element: <ProductDetails />,
+      },
+      {
+        path: "/favorites",
+        element: <Favorites />,
+      },
+      {
+        path: "/client",
+        element: <Client />,
+      },
+      {
+        path: "/admin",
+        element: <Admin />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
+      {
+        path: "/order-complete",
+        element: <OrderComplete />,
+      },
+      {
+        path: "/selected-order",
+        element: <SelectedOrder />,
+      },
+      {
+        path: "/create-product",
+        element: <ProductCreator />,
+      },
+      {
+        path: "*",
+        element: <PageNotFound />,
+      },
+    ],
+  },
+]);

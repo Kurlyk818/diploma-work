@@ -3,6 +3,11 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const FavoriteSchema = new Schema({
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+        required: true
+    },
     name: String,
     type: String,
     imageUrl: String,

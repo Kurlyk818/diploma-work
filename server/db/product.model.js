@@ -3,10 +3,14 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const ProductSchema = new Schema({
-    name: String,
+    name: {
+        type: String,
+        required: true,
+    },
     type: {
         type: String,
-        lowercase: true
+        lowercase: true,
+        required: true,
     },
     imageUrl: String,
     ingredients: [String],

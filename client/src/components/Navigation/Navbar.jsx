@@ -32,7 +32,7 @@ export default function Navbar() {
     return (
         <>
             <nav className="navbar">
-                <NavLink to="/" className="navbar-logo">
+                <NavLink to="/about" className="navbar-logo">
                     <img src={tazzaLogo} alt="A La Tarantazza Logo" />
                 </NavLink>
                 <div className="menu-icon" onClick={handleOpenMenu}>
@@ -40,7 +40,7 @@ export default function Navbar() {
                 </div>
                 <ul className={menuIsOpen ? "nav-menu active" : "nav-menu"}>
                     <li className="nav-item">
-                        <NavLink to="/" className="nav-links" onClick={closeMobileMenu}>
+                        <NavLink to="/about" className="nav-links" onClick={closeMobileMenu}>
                             About
                         </NavLink>
                     </li>
@@ -55,6 +55,7 @@ export default function Navbar() {
                             Favorites
                         </NavLink>
                     </li>
+                    
                     <li className="nav-item">
                         <NavLink to="/admin" className="nav-links" onClick={closeMobileMenu}>
                             Admin

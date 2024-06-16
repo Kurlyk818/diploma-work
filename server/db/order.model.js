@@ -3,6 +3,11 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const OrderSchema = new Schema({
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+        required: true
+    },
     client: {
         name: String,
         email: String,
@@ -18,7 +23,7 @@ const OrderSchema = new Schema({
     created: {
         type: Date,
         default: Date.now
-    }
+    },
 });
 
 module.exports = mongoose.model("Order", OrderSchema );

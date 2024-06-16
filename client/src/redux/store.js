@@ -4,6 +4,7 @@ import productDetailsReducer from "./productDetailsSlice";
 import orderDetailsReducer from "./orderDetailsSlice";
 import cartReducer from "./cartSlice";
 import favoriteReducer, { fetchFavorites } from "./favoriteSlice";
+import userSlice from "./userSlice";
 
 const store = configureStore({
   reducer: {
@@ -11,7 +12,8 @@ const store = configureStore({
     product: productDetailsReducer,
     cart: cartReducer,
     favoriteList: favoriteReducer,
-    order: orderDetailsReducer
+    order: orderDetailsReducer,
+    user: userSlice,
   }
 });
 

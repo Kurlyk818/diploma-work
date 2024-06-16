@@ -1,55 +1,48 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const mongoose = require("mongoose");
 
-const userSchema = new Schema({
-  firstName: {
-    type: String,
-    required: true,
-  },
-  lastName: {
-    type: String,
-    required: true,
-  },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  password: {
-    type: String,
-    required: true,
-  },
-  phoneNumber: {
-    type: String,
-  },
-  address: {
-    type: String,
-  },
-  role: {
-    type: String,
-    enum: ['customer', 'admin'], // Define user roles
-    default: 'customer',
-  },
-  orders: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Order', // Reference to the Order model
+const { Schema } = mongoose;
+
+const UserSchema = new Schema({
+    firstName: {
+        type : String,
+        required: true,
+        min: 2,
+        max: 50,
     },
-  ],
-  cart: [
-    {
-      product: {
-        type: Schema.Types.ObjectId,
-        ref: 'Product', // Reference to the Product model
-      },
-      quantity: {
-        type: Number,
-        default: 1,
-      },
+    lastName: {
+        type : String,
+        required: true,
+        min: 2,
+        max: 50,
     },
-  ],
-}, { timestamps: true }); // Adds createdAt and updatedAt fields
+    email: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    password: {
+        type: String,
+        required: true
+    },
+    role: {
+        type: String,
+        enum: ["admin", "user"],
+        default: "user"
+    },
+    phoneNumber: {
+        type: String,
+        min: 7,
+        max: 20,
+    },
+    location: {
+        type: String,
+        default: "N/A"
+    },
+    picturePath: {
+        type: String,
+        default: "user.png",
+    },
+},{timestamps: true});
 
-const User = mongoose.model('User', userSchema);
-
-module.exports = User;
+const User = mongoose.model('User', UserSchema);
+module.exports = User
