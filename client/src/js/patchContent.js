@@ -1,9 +1,10 @@
-export const patchContent = async (url, id, updatedData) => {
+export const patchContent = async (url, id, updatedData, token) => {
     try {
         const response = await fetch(`${url}/${id}`, {
             method: 'PATCH',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                "Authorization": `Bearer ${token}`,
             },
             body: JSON.stringify(updatedData)
         });

@@ -1,4 +1,5 @@
 const Favorite = require("../db/favorite.model");
+const  serverErrorHandler  = require("../middleware/ServerErrorHandler");
 
 const getFavoritesProduct = async (req, res) => {
     try {

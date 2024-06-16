@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Formik } from "formik";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, } from "react-redux";
 
 import { setUser } from "../../redux/userSlice";
 
@@ -39,19 +39,25 @@ const Form = () => {
   const isRegister = pageType === "register";
 
   const register = async (values, onSubmitProps) => {
+    try{
     const formData = new FormData();
     for (let value in values) {
       formData.append(value, values[value]);
     }
     const savedUserResponse = await fetch(`http://localhost:8080/auth/register`, {
       method: "POST",
-      body: formData,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(values),
+
     });
     const savedUser = await savedUserResponse.json();
     onSubmitProps.resetForm();
     if (savedUser) {
       setPageType("login");
     }
+  } catch (error){
+    console.error(error);
+  }
   };
 
   const login = async (values, onSubmitProps) => {
@@ -64,10 +70,7 @@ const Form = () => {
     onSubmitProps.resetForm();
     if (loggedIn) {
       dispatch(
-        setUser({
-          user: loggedIn.user,
-          token: loggedIn.token,
-        })
+        setUser(loggedIn)
       );
       navigate("/about");
     }
@@ -103,7 +106,7 @@ const Form = () => {
                   name="firstName"
                   onBlur={handleBlur}
                   onChange={handleChange}
-                  value={values.firstName}
+                  value={values.firstName || ""}
                   error={Boolean(touched.firstName) && Boolean(errors.firstName)}
                   helperText={touched.firstName && errors.firstName}
                   placeholder="Enter your first name"
@@ -132,7 +135,7 @@ const Form = () => {
                   name="lastName"
                   onBlur={handleBlur}
                   onChange={handleChange}
-                  value={values.lastName}
+                  value={values.lastName || ""}
                   error={Boolean(touched.lastName) && Boolean(errors.lastName)}
                   helperText={touched.lastName && errors.lastName}
                   sx={{
@@ -162,7 +165,7 @@ const Form = () => {
               label="Email"
               onBlur={handleBlur}
               onChange={handleChange}
-              value={values.email}
+              value={values.email || ""}
               error={Boolean(touched.email) && Boolean(errors.email)}
               helperText={touched.email && errors.email}
               sx={{
@@ -191,7 +194,7 @@ const Form = () => {
               type="password"
               onBlur={handleBlur}
               onChange={handleChange}
-              value={values.password}
+              value={values.password || ""}
               error={Boolean(touched.password) && Boolean(errors.password)}
               helperText={touched.password && errors.password}
               sx={{

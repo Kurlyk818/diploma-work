@@ -1,5 +1,4 @@
 import { createBrowserRouter } from "react-router-dom";
-// import { useSelector } from "react-redux";
 
 import About from "./pages/About/About";
 import Navbar from "./components/Navigation/Navbar";
@@ -19,7 +18,9 @@ import OrderComplete from "./pages/OrderComplete/OrderComplete";
 import ProductCreator from "./pages/ProductCreator/ProductCreator";
 import SelectedOrder from "./pages/SelectedOrder/SelectedOrder";
 import LoginPage from "./pages/Login/Login";
+import History from "./pages/History/History";
 
+import RequireAuth from "./components/RequireAuth/RequireAuth";
 
 export const router = createBrowserRouter([
   {
@@ -32,63 +33,100 @@ export const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "/pizza",
+        path: "pizza",
         element: <Pizza />,
       },
-      { path: "/login",
-        element: <LoginPage />
+      {
+        path: "login",
+        element: <LoginPage />,
       },
       {
-        path: "/about",
+        path: "about",
         element: <About />,
       },
       {
-        path: "/menu",
+        path: "menu",
         element: <Menu />,
       },
       {
-        path: "/desserts",
+        path: "desserts",
         element: <Desserts />,
       },
       {
-        path: "/salads",
+        path: "salads",
         element: <Salads />,
       },
       {
-        path: "/drinks",
+        path: "drinks",
         element: <Drinks />,
       },
       {
-        path: "/product-details",
+        path: "product-details",
         element: <ProductDetails />,
       },
       {
-        path: "/favorites",
-        element: <Favorites />,
+        path: "favorites",
+        element: (
+          <RequireAuth>
+            <Favorites />
+          </RequireAuth>
+        ),
       },
       {
-        path: "/client",
-        element: <Client />,
+        path: "client-history",
+        element: (
+          <RequireAuth>
+            <History />
+          </RequireAuth>
+        ),
       },
       {
-        path: "/admin",
-        element: <Admin />,
+        path: "order-history",
+        element: (
+          <RequireAuth>
+            <Client />
+          </RequireAuth>
+        ),
       },
       {
-        path: "/cart",
-        element: <Cart />,
+        path: "admin",
+        element: (
+          <RequireAuth>
+            <Admin />
+          </RequireAuth>
+        ),
       },
       {
-        path: "/order-complete",
-        element: <OrderComplete />,
+        path: "cart",
+        element: (
+          <RequireAuth>
+            <Cart />
+          </RequireAuth>
+        ),
       },
       {
-        path: "/selected-order",
-        element: <SelectedOrder />,
+        path: "order-complete",
+        element: (
+          <RequireAuth>
+            <OrderComplete />
+          </RequireAuth>
+        ),
       },
       {
-        path: "/create-product",
-        element: <ProductCreator />,
+        path: "selected-order",
+        element: (
+          <RequireAuth>
+            <SelectedOrder />
+          </RequireAuth>
+        ),
+      },
+      {
+        path: "create-product",
+        element: (
+          <RequireAuth>
+            <ProductCreator />
+          </RequireAuth>
+        ),
       },
       {
         path: "*",

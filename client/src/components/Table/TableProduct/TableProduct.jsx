@@ -11,6 +11,7 @@ import "./TableProduct.css";
 export default function TableProduct({ product }) {
     const productObj = product[0];
     const productsInCart = useSelector(state => state.cart.products);
+    const {token} = useSelector(state => state.user); 
     const [updating, setUpdating] = useState(false);
     const nameRef = useRef(), priceRef = useRef(), amountRef = useRef();
     const dispatch = useDispatch();
@@ -34,7 +35,7 @@ export default function TableProduct({ product }) {
             price: priceRef.current.value,
             amount: amountRef.current.value
         }
-        patchContent(productsUrl, productObj._id, updatedProduct)
+        patchContent(productsUrl, productObj._id, updatedProduct, token)
             .then(() => {
                 adjustInCartWhenUpdated(updatedProduct);
                 return dispatch(fetchProducts())

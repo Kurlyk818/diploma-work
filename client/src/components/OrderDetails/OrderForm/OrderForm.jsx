@@ -4,10 +4,10 @@ import "./OrderForm.css";
 export default function OrderForm( {handleSubmit}) {
     const nameRef = useRef();
     const addressRef = useRef();
-    const emailRef = useRef();
+    const phoneNumberRef = useRef();
 
     return (
-        <form onSubmit={(e) => handleSubmit(e, nameRef, addressRef, emailRef)} className="order-form">
+        <form onSubmit={(e) => handleSubmit(e, nameRef, addressRef, phoneNumberRef)} className="order-form">
             <h3>Client Details</h3>
             <div className="client-details-1">
                 <label htmlFor="name">Name: </label>
@@ -20,13 +20,13 @@ export default function OrderForm( {handleSubmit}) {
                     required />
             </div>
             <div className="client-details-2">
-                <label htmlFor="email">Email: </label>
+                <label htmlFor="email">Phone: </label>
                 <input 
-                    type="email"
+                    type="text"
                     name="email"
                     id="email"
                     placeholder="sherlocked@gmail.com"
-                    ref={emailRef}
+                    ref={phoneNumberRef}
                     required />
             </div>
             <div className="client-details-3">

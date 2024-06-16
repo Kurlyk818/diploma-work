@@ -21,10 +21,12 @@ export default function ProductDetails() {
     const detailsState = useSelector(state => state.product.details);
     const favoritesState = useSelector(state => state.favoriteList);
     const productsInCart = useSelector(state => state.cart.products);
+    const {token} = useSelector(state => state.user); 
+
+    const {_id} = useSelector(state => state.user.user);
     const [favorites, setFavorites] = useState([]);
     const [showAddedProduct, setShowAddedProduct] = useState(false);
-
-    const productToDisplay = detailsState[0];
+    let productToDisplay = detailsState[0] ;
     const productName = detailsState[0].name;
     const inStock = detailsState[0].amount;
     const dispatch = useDispatch();
@@ -102,8 +104,9 @@ export default function ProductDetails() {
                             {isInFavorites(favorites, productToDisplay) ? (
                                 <button type="button" className="base-btn"
                                     onClick={() => {
+                                        productToDisplay = {...productToDisplay, user: _id};
                                         dispatch(removeProductFromFavorites(productToDisplay));
-                                        deleteOneItem(favoritesUrl, productToDisplay._id);
+                                        deleteOneItem(favoritesUrl, productToDisplay._id, token);
                                     }}>
                                     Remove From Favorites
                                 </button>
@@ -112,8 +115,11 @@ export default function ProductDetails() {
                                     type="button"
                                     className="base-btn"
                                     onClick={() => {
+                                        productToDisplay = {...productToDisplay, user: _id};
                                         dispatch(addProductToFavorites(productToDisplay));
+                                        
                                         postContent(productToDisplay, favoritesUrl);
+
                                     }}>
                                     Add to Favorites
                                 </button>

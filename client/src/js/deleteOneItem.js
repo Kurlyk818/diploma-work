@@ -1,9 +1,10 @@
-export const deleteOneItem = async (url, id) => {
+export const deleteOneItem = async (url, id, token) => {
     try {
         const response = await fetch(`${url}/${id}`, {
             method: 'DELETE',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                "Authorization": `Bearer ${token}`,
             }
         });
 

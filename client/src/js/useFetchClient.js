@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import { ordersUrl } from "./endpoints";
 
-export function useFetch(  ) {
+
+export function useFetchClient(_id) {
+    const ordersUrl = `http://localhost:8080/orders/${_id}`;
     const [data, setData] = useState();
     const [isError, setIsError] = useState(false);
     const [isLoading, setIsLoading] = useState(true);

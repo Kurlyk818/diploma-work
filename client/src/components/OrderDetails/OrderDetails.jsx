@@ -18,6 +18,7 @@ import InfoMessage from "../InfoMessage/InfoMessage";
 export default function OrderDetails( { handleLoading }) {
     const productsInCart = useSelector(state => state.cart.products);
     const products = useSelector(state => state.productList.products);
+    const { user } = useSelector(state => state.user);
     const [showRemovalMessage, setShowRemovalMessage] = useState(false);
     const [voucher, setVoucher] = useState(() => {
         const storedVoucher = localStorage.getItem("voucher");
@@ -29,7 +30,7 @@ export default function OrderDetails( { handleLoading }) {
     const totalCost = calculateTotalCost(totalProductsCost, shippingCost, discounts);
     const navigate = useNavigate();
     const dispatch = useDispatch();
-
+    const {token} = useSelector((state) => state.user)
     useEffect(() => {
         if(productsInCart.length > 0) {
             setLocalStorageVoucherValue(voucher);
@@ -39,7 +40,7 @@ export default function OrderDetails( { handleLoading }) {
         }
     }, [voucher, productsInCart.length]);
 
-    const handleSubmitForm = (e, nameInput, addressInput, emailInput) => {
+    const handleSubmitForm = (e, nameInput, addressInput, phoneInput) => {
         e.preventDefault();
 
         if(productsInCart.length === 0) return;
@@ -52,21 +53,22 @@ export default function OrderDetails( { handleLoading }) {
 
         handleLoading();
         const order = {
+            user: user._id,
             client: {
                 name: nameInput.current.value,
-                email: emailInput.current.value,
+                phoneNumber: phoneInput.current.value,
                 address: addressInput.current.value
             },
             products: productsInCart,
             totalCost: totalCost
         }
 
-        postContent(order, ordersUrl)
+        postContent(order, ordersUrl, token )
         .then(() => {
             const patchPromises = productsInCart.map((product) => {
                 return patchContent(productsUrl, product._id, {  
                     amount: matchToProductInStock(product, products).amount - product.quantity
-                });
+                }, token);
             });
     
             return Promise.all(patchPromises);

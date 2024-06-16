@@ -10,7 +10,7 @@ const OrderSchema = new Schema({
     },
     client: {
         name: String,
-        email: String,
+        phoneNumber: String,
         address: String
     },
     products: [{

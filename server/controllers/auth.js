@@ -1,14 +1,17 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const User = require("../db/user.model.js");
+const  serverErrorHandler  = require("../middleware/ServerErrorHandler");
 
 //Register User
 
  const register = async (req, res) => {
   try {
     const { firstName, lastName, email, password } = req.body;
-
-    const salt = await bcrypt.genSalt();
+    if (!firstName || !lastName || !email || !password) {
+      return res.status(400).json({ msg: 'Please enter all fields' });
+    }
+    const salt = await bcrypt.genSalt(10);
     const passwordHash = await bcrypt.hash(password, salt);
 
     const newUser = new User({
@@ -16,10 +19,6 @@ const User = require("../db/user.model.js");
       lastName,
       email,
       password: passwordHash,
-      role: "user",
-      phoneNumber: "N/A",
-      location: "N/A",
-      picturePath: "user.png",
     });
 
     const savedUser = await newUser.save();
