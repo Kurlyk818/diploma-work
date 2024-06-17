@@ -69,8 +69,8 @@ export default function Navbar() {
           )}
           {userRole === "admin" && (
           <li className="nav-item">
-                <NavLink to="/client-history" className="nav-links" onClick={closeMobileMenu}>
-                  History
+                <NavLink to="/order-history" className="nav-links" onClick={closeMobileMenu}>
+                Order History
                 </NavLink>
               </li>
             )}

@@ -99,9 +99,7 @@ export const router = createBrowserRouter([
       {
         path: "cart",
         element: (
-          <RequireAuth>
             <Cart />
-          </RequireAuth>
         ),
       },
       {

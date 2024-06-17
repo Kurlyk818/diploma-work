@@ -25,7 +25,7 @@ export default function OrderForm( {handleSubmit}) {
                     type="text"
                     name="email"
                     id="email"
-                    placeholder="sherlocked@gmail.com"
+                    placeholder="+380981234567"
                     ref={phoneNumberRef}
                     required />
             </div>

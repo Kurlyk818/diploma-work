@@ -23,7 +23,7 @@ export default function ProductDetails() {
     const productsInCart = useSelector(state => state.cart.products);
     const {token} = useSelector(state => state.user); 
 
-    const {_id} = useSelector(state => state.user.user);
+    const _id = useSelector(state => state.user.user?._id );
     const [favorites, setFavorites] = useState([]);
     const [showAddedProduct, setShowAddedProduct] = useState(false);
     let productToDisplay = detailsState[0] ;
