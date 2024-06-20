@@ -3,22 +3,22 @@ import "./Summary.css";
 export default function Summary({ productsTotal, shipping, discount, total }) {
     return (
         <div className="order-summary">
-            <h3>Order Summary</h3>
+            <h3>Підсумок замовлення</h3>
             <div className="price-item">
-                <p><strong>Products Cost:</strong></p>
-                <p>${productsTotal.toFixed(2)}</p>
+                <p><strong>Вартість товарів:</strong></p>
+                <p>{productsTotal.toFixed(2)} грн</p>
             </div>
             <div className="price-item">
-                <p><strong>Shipping Cost:</strong> </p>
-                <p className="extra-cost">+${shipping}</p>
+                <p><strong>Вартість доставки:</strong> </p>
+                <p className="extra-cost">+{shipping} грн</p>
             </div>
             <div className="price-item">
-                <p><strong>Discounts:</strong></p>
-                <p className="less-cost">-${discount}</p>
+                <p><strong>Знижка:</strong></p>
+                <p className="less-cost">-{discount} грн</p>
             </div>
             <div className="price-item">
-                <p><strong>Total:</strong> </p>
-                <p>${total}</p>
+                <p><strong>Всього:</strong> </p>
+                <p>{total} грн</p>
             </div>
         </div>
     )

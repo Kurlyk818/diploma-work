@@ -27,7 +27,7 @@ export default function Cart() {
 
     return (
         <div className="cart-frame">
-            <h2>My Order</h2>
+            <h2>Корзина</h2>
             <div className="order-elements">
                 <div className="products-in-cart">
                     {sortedProductsInCart.length > 0 ? sortedProductsInCart.map((product, i) => (
@@ -38,7 +38,7 @@ export default function Cart() {
                             removeAll={() => dispatch(removeAllFromCart(product))}
                             quantity={getQuantityInCart(productsInCart, product)}/>
                     )) : (
-                        <h3>No products in Cart</h3>
+                        <h3>В корзині немає товарів</h3>
                     )}
                 </div>
                 <OrderDetails handleLoading={() => setLoading(true)} />

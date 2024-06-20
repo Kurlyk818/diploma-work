@@ -20,7 +20,7 @@ export default function ProductsList({ productType }) {
     const [showAddedProduct, setShowAddedProduct] = useState(false);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-
+    const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
     const showProductDetails = (product) => {
         dispatch(setProduct([product]));
         navigate("/product-details");
@@ -41,7 +41,7 @@ export default function ProductsList({ productType }) {
         setFilteredProducts(data);
         setProducts(data);
 
-        if (optionName === "-- See All --") return;
+        if (optionName === "--Дивитись усі --") return;
         setFilteredProducts(prev => filterOutByString(prev, optionName));
         setProducts(prev => filterOutByString(prev, optionName));
     }
@@ -53,11 +53,16 @@ export default function ProductsList({ productType }) {
     };
 
     const handleAddToCart = (product) => {
-        dispatch(addProductToCart(product));
-        setShowAddedProduct(true); 
-        setTimeout(() => {
-            setShowAddedProduct(false); 
-        }, 3000);
+        if (isAuthenticated) {
+            dispatch(addProductToCart(product));
+            setShowAddedProduct(true); 
+            setTimeout(() => {
+                setShowAddedProduct(false); 
+            }, 3000);
+          } else {
+            navigate("/login");
+          }
+       
     }
 
     return (
@@ -77,7 +82,7 @@ export default function ProductsList({ productType }) {
                     />
                 ))}
             </div>
-            <InfoMessage show={showAddedProduct} message="Product Added to Cart" />
+            <InfoMessage show={showAddedProduct} message="Продукт доданий до корзини" />
         </section>
     );
 }

@@ -1,6 +1,6 @@
 .order-item {
     background: var(--medium);
-    width: 800px;
+    width: 900px;
     padding: 1rem;
     margin: 0.2rem;
     border-radius: var(--soft-border);
@@ -34,4 +34,8 @@
     .past-order-details h3, .cost-p {
         margin-bottom: 0.5rem;
     }
+}
+.order-id{
+    display: flex;
+    flex-direction: column;
 }

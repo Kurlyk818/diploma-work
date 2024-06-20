@@ -11,43 +11,43 @@ export default function Menu() {
     return (
         <section className="main-menu">
             <div className="pizza-info infos" onClick={() => navigate("/pizza")}>
-                <img src={pizza} alt="Pizza" />
+                <img src={pizza} alt="Піца" />
                 <div>
-                    <h2>Pizza</h2>
-                    <p> - expert hand-kneaded dough </p>
-                    <p> - gluten free alternatives </p>
-                    <p> - vegan alternatives </p>
-                    <p> - quality in every bite</p>
-                    <p> - wide range of toppings </p>
+                    <h2>Піца</h2>
+                    <p> - експертне тісто, замішане вручну </p>
+                    <p> - безглютенові альтернативи </p>
+                    <p> - веганські альтернативи </p>
+                    <p> - якість в кожному шматочку</p>
+                    <p> - широкий вибір начинок </p>
                 </div>
             </div>
             <div className="desserts-info infos" onClick={() => navigate("/desserts")}>
-                <img src={desserts} alt="Pizza" />
+                <img src={desserts} alt="Десерти" />
                 <div>
-                    <h2>Desserts</h2>
-                    <p> - traditional oven-baked </p>
-                    <p> - locally sourced fruits </p>
-                    <p> - milk from casein A2 cows only </p>
-                    <p> - enriched with essential vitamins </p>
-                    <p> - team led by Reonaldo Di Alfonso (celebrity baker)</p>
+                    <h2>Десерти</h2>
+                    <p> - традиційно випечені в духовці </p>
+                    <p> - фрукти з місцевих джерел </p>
+                    <p> - молоко тільки від корів з казеїном A2 </p>
+                    <p> - збагачені необхідними вітамінами </p>
+                    <p> - команда під керівництвом Ла Белла Чіназеса (знаменитий пекар)</p>
                 </div>
             </div>
             <div className="salads-info infos" onClick={() => navigate("/salads")}>
-                <img src={salads} alt="Pizza" />
+                <img src={salads} alt="Салати" />
                 <div>
-                    <h2>Salads</h2>
-                    <p> - fresh in any season</p>
-                    <p> - for every 50 salads sold, we plant a tree </p>
-                    <p> - devoted to excellence, promoting healthier eating</p>
+                    <h2>Салати</h2>
+                    <p> - свіжі в будь-яку пору року</p>
+                    <p> - за кожні 50 проданих салатів ми садимо дерево </p>
+                    <p> - віддані досконалості, сприяючи здоровому харчуванню</p>
                 </div>
             </div>
             <div className="drinks-info infos" onClick={() => navigate("/drinks")}>
-                <img src={drinks} alt="Pizza" />
+                <img src={drinks} alt="Напої" />
                 <div>
-                    <h2>Drinks</h2>
-                    <p> - low alcoholic content </p>
-                    <p> - fresh and flavorful</p>
-                    <p> - happiness in a bottle</p>
+                    <h2>Напої</h2>
+                    <p> - низький вміст алкоголю </p>
+                    <p> - свіжі та ароматні</p>
+                    <p> - щастя в пляшці</p>
                 </div>
             </div>
         </section>

@@ -8,7 +8,7 @@ export default function Filter({ allergens, filter, search }) {
     return (
         <div className="filter">
             <div className="selector">
-                <h3>Remove all with: </h3>
+                <h3>Видалити все з: </h3>
                 <select 
                     name="filter-out-allergen"
                     title="Filter out by allergen" 
@@ -16,7 +16,7 @@ export default function Filter({ allergens, filter, search }) {
                     onChange={() => filter(inputElement, selectElement)}
                     ref={selectElement}
                 >
-                    <option>-- See All --</option>
+                    <option>-- Дивитись усі --</option>
                     {allergens.map((allergen, i) => (
                         <option key={i}>{allergen}</option>
                     ))}

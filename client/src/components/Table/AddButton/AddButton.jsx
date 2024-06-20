@@ -9,7 +9,7 @@ export default function AddButton() {
             type="button"
             className="base-btn add-new-product-btn"
             onClick={() => navigate("/create-product")}>
-            Add New Product
+            Додати новий продукт
         </button>
     )
 }

@@ -13,11 +13,11 @@ export default function Product({ product, showDetails, addToCart }) {
                 <h3>{product[0].name}</h3>
                 <button type="button" className="base-btn details"
                     onClick={showDetails}>
-                    See Details
+                    Деталі
                 </button>
                 <div className="product-info">
                     <p className="price">
-                        {product[0].amount > 0 ? `$` + product[0].price.toFixed(2) : "Unavailable"}
+                        {product[0].amount > 0 ?  product[0].price.toFixed(2) + ` грн`  : "Закінчився"}
                     </p>
                     {product[0].amount > 0 && productAmountGreaterThanProductQuantity(productsInCart, product[0]) ? (
                         <img src={cart} alt="Cart" className="buy-cart" onClick={addToCart} />

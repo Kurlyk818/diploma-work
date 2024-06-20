@@ -27,7 +27,7 @@ export default function Favorites() {
         const optionName = select.current.value;
     
         setSortedFavorites(favorites);
-        if (optionName === "-- Unsorted --") return;
+        if (optionName === "-- Не сортовано --") return;
         if (optionName === "ASC") {
             setSortedFavorites((prev) => {
                 return [...prev].sort((a, b) => a.name.localeCompare(b.name));
@@ -42,7 +42,7 @@ export default function Favorites() {
     return (
         <div className="favorites-menu">
             <div className="favorites-bar">
-                <h2>Favorites |</h2>
+                <h2>Вподобання |</h2>
                 <Sort sort={sorter} />
             </div>
             <div className="favorites">

@@ -13,11 +13,11 @@ export default function Favorite({ favorite, deleteFavorite }) {
                         type="button"
                         className="base-btn"
                         onClick={deleteFavorite}>
-                        Remove
+                        Видалити
                     </button>
                 </div>
                 <div>
-                    <h4>Ingredients: </h4>
+                    <h4>Інградієнти: </h4>
                     <p>
                         {favorite[0].ingredients.map(item => (
                             <span key={item}>{item}, </span>
@@ -25,7 +25,7 @@ export default function Favorite({ favorite, deleteFavorite }) {
                     </p>
                 </div>
                 <div>
-                    <h4>Allergens: </h4>
+                    <h4>Алергени: </h4>
                     <p>
                         {favorite[0].alergens.length > 0 ? favorite[0].alergens.map(item => (
                             <span key={item}>{item}, </span>

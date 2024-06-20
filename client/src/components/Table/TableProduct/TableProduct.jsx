@@ -91,7 +91,7 @@ export default function TableProduct({ product }) {
                             type="button"
                             className="base-btn"
                             onClick={handleSave}>
-                            Save
+                            Зберегти
                         </button>
                     </td>
                 </>
@@ -111,7 +111,7 @@ export default function TableProduct({ product }) {
                             type="button"
                             className="base-btn"
                             onClick={() => setUpdating(true)}>
-                            Update
+                            Оновити
                         </button>
                     </td>
                 </>
@@ -121,7 +121,7 @@ export default function TableProduct({ product }) {
                     type="button"
                     className="base-btn table-prod-delete"
                     onClick={handleDelete}>
-                    Delete
+                    Видалити
                 </button>
             </td>
         </tr>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { ordersUrl } from "./endpoints";
 
-export function useFetch(  ) {
+export function useFetch() {
     const [data, setData] = useState();
     const [isError, setIsError] = useState(false);
     const [isLoading, setIsLoading] = useState(true);

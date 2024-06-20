@@ -38,6 +38,9 @@ export default function Client() {
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
+  const [search, setSearch] = useState("");
+  const [sortOrder, setSortOrder] = useState("asc");
+
   useEffect(() => {
     const fetchData = async () => {
       if (!_id) {
@@ -67,14 +70,47 @@ export default function Client() {
     dispatch(setOrder(order));
     navigate("/selected-order");
   };
+  const handleSearchChange = (e) => {
+    setSearch(e.target.value);
+  };
+
+  const handleSortOrderChange = (e) => {
+    setSortOrder(e.target.value);
+  };
+
+  const filteredData = data.filter(
+    (item) =>
+      item.client.name.toLowerCase().includes(search.toLowerCase()) || item._id.toString().includes(search)
+  );
+
+  const sortedData = filteredData.sort((a, b) => {
+    if (sortOrder === "asc") {
+      return new Date(a.created) - new Date(b.created);
+    } else {
+      return new Date(b.created) - new Date(a.created);
+    }
+  });
+
 
   if (isLoading) return <Loading />;
   if (isError) return <ErrorPage />;
   return (
     <div className="orders-frame">
-      <h2>Order History</h2>
+      <h2>Історія замовлень</h2>
+      <div className="search-sort-controls">
+        <input
+          type="text"
+          placeholder="Пошук за іменем або id"
+          value={search}
+          onChange={handleSearchChange}
+        />
+        <select value={sortOrder} onChange={handleSortOrderChange}>
+          <option value="asc">Сортування по даті(Від першого до останнього)</option>
+          <option value="desc">Сортування по даті(Від останнього до першого)</option>
+        </select>
+      </div>
       {data && data.length > 0 ? (
-        data.map((item, i) => (
+        sortedData.map((item, i) => (
           <OrderItem
             key={item._id}
             order={item}

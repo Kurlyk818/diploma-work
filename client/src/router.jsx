@@ -19,7 +19,7 @@ import ProductCreator from "./pages/ProductCreator/ProductCreator";
 import SelectedOrder from "./pages/SelectedOrder/SelectedOrder";
 import LoginPage from "./pages/Login/Login";
 import History from "./pages/History/History";
-
+import AdminSelectedOrder from "./pages/SelectedOrder/AdminSelectedOrder";
 import RequireAuth from "./components/RequireAuth/RequireAuth";
 
 export const router = createBrowserRouter([
@@ -115,6 +115,14 @@ export const router = createBrowserRouter([
         element: (
           <RequireAuth>
             <SelectedOrder />
+          </RequireAuth>
+        ),
+      },
+      {
+        path: "selected-admin-order",
+        element: (
+          <RequireAuth>
+            <AdminSelectedOrder />
           </RequireAuth>
         ),
       },

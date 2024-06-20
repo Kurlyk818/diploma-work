@@ -8,3 +8,32 @@
 .orders-frame h2 {
     margin-bottom: 0.5rem;
 }
+
+.search-sort-controls input, .search-sort-controls select {
+    padding: 0.7rem;
+    border-radius: var(--soft-border);
+    margin-bottom: 0.35rem;
+    font-size: 17px;
+}
+
+.search-sort-controls select {
+    background: var(--dark-medium);
+    color: var(--light);
+    text-align: center;
+    margin-left: 10px;
+}
+.search-sort-controls input {
+    background: var(--light);
+    margin-left: 1rem;
+}
+
+@media (max-width: 500px) {
+    .search-sort-controls {
+        flex-direction: column;
+    }
+
+    .search-sort-controls input {
+        margin: 0.2rem auto 0.5rem auto;
+        width: 100%;
+    }
+}

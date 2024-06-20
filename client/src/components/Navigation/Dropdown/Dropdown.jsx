@@ -20,28 +20,28 @@ export default function Dropdown() {
                     <NavLink to="/pizza"
                         onClick={() => setIsOpen(false)}
                         className="dropdown-link">
-                        Pizza
+                        Піца
                     </NavLink>
                 </li>
                 <li>
                     <NavLink to="/desserts"
                         onClick={() => setIsOpen(false)}
                         className="dropdown-link">
-                        Desserts
+                        Десерти
                     </NavLink>
                 </li>
                 <li>
                     <NavLink to="/salads"
                         onClick={() => setIsOpen(false)}
                         className="dropdown-link">
-                        Salads
+                        Салати
                     </NavLink>
                 </li>
                 <li>
                     <NavLink to="/drinks"
                         onClick={() => setIsOpen(false)}
                         className="dropdown-link">
-                        Drinks
+                        Напої
                     </NavLink>
                 </li>
             </ul>

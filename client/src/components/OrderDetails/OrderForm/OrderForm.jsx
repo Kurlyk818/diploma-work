@@ -8,9 +8,9 @@ export default function OrderForm( {handleSubmit}) {
 
     return (
         <form onSubmit={(e) => handleSubmit(e, nameRef, addressRef, phoneNumberRef)} className="order-form">
-            <h3>Client Details</h3>
+            <h3>Деталі замовлення</h3>
             <div className="client-details-1">
-                <label htmlFor="name">Name: </label>
+                <label htmlFor="name">Ім'я: </label>
                 <input 
                     type="text"
                     name="name"
@@ -20,7 +20,7 @@ export default function OrderForm( {handleSubmit}) {
                     required />
             </div>
             <div className="client-details-2">
-                <label htmlFor="email">Phone: </label>
+                <label htmlFor="email">Телефон: </label>
                 <input 
                     type="text"
                     name="email"
@@ -30,7 +30,7 @@ export default function OrderForm( {handleSubmit}) {
                     required />
             </div>
             <div className="client-details-3">
-                <label htmlFor="address">Address: </label>
+                <label htmlFor="address">Адреса: </label>
                 <input 
                     type="text"
                     name="address"
@@ -43,7 +43,7 @@ export default function OrderForm( {handleSubmit}) {
                 <button
                     type="submit"
                     className="base-btn">
-                    Order Now
+                    Замовити
                 </button>
             </div>
         </form>

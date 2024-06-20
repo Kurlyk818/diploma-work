@@ -10,10 +10,10 @@ export default function Voucher({ addVoucher, voucher }) {
     
     return (
         <div className="voucher">
-            <p>Do you have a voucher?</p>
+            <p>Маєте промокод?</p>
             {productsInCart.length > 0 && voucher === expectedVoucher ? (
                 <p className="applied-voucher">
-                    X <i>{expectedVoucher} applied to order.</i>
+                     <i>{expectedVoucher} використано для замовлення.</i>
                 </p>
             ) : null}
             <div className="no-voucher">
@@ -25,7 +25,7 @@ export default function Voucher({ addVoucher, voucher }) {
                     type="apply-voucher"
                     className="base-btn"
                     onClick={() => addVoucher(inputRef)}>
-                    Add
+                    додати
                 </button>
             </div>
         </div>

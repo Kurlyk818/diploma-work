@@ -1,27 +1,27 @@
 const quotes = [
     {
         name: "Frederick Fahler",
-        review: "Most delicious pies I've ever had! My first time, I tried having only one slice and ended up cleaning the box and ordering another one by sundown. 10/10 I'll keep doing it."
+        review: "Найсмачніші пироги, які я коли-небудь їв! У перший раз я спробував з’їсти лише один шматочок, і в підсумку вийшло..."
     },
     {
         name: "Cynthia Styles",
-        review: "As a foodie, I try to recreate most recipes I like, but after five tries, it's important to admit that A La Tarantazza has achieved something truly irreplicable. I've considered getting a job there to find out their secret ingredients."
+        review: "Як гурман, я намагаюся відтворити більшість рецептів, які мені подобаються, але після п'яти спроб важливо визнати, що A La Tarantazza досягла чогось справді неповторного. Я думала навіть влаштуватися на роботу туди, щоб дізнатися їхні секретні інгредієнти."
     },
     {
         name: "Sarah Nye",
-        review: "I get A La Tarantazza cake when I celebrate. I get A La Tarantazza cake when I'm sad. I get A La Tarantazza cake when I'm bored. Might as well get some A La Tarantazza cake to punctuate the end of this review! (And tomorrow too.)"
+        review: "Я купую торт A La Tarantazza, коли святкую. Я купую торт A La Tarantazza, коли мені сумно. Я купую торт A La Tarantazza, коли мені нудно. Можна ж і зараз купити торт A La Tarantazza, щоб завершити цей відгук! (І завтра теж.)"
     }, 
     {
         name: "Lori Truman",
-        review: "I can't image my birthday without a cake from A La Tarantazza, but most of my friends are addicted to the pizzas."
+        review: "Я не уявляю свій день народження без торта від A La Tarantazza, але більшість моїх друзів підсіли на піцу."
     },
     {
         name: "George Browder",
-        review: "Even the salad is incredibly favorful here. I don't like salad, but I'll get it if it's from A La Tarantazza!"
+        review: "Навіть салат тут неймовірно смачний. Я не люблю салат, але замовляю його, якщо він з A La Tarantazza!"
     },
     {
         name: "Sal Stevens",
-        review: "I'm not a picky eater but A La Tarantazza has spoiled me. Now I can't eat cake unless we get one from them and I don't think there's any better pizza place in this city. Do I regret it? Not a chance! Everyone has their own comfort food."
+        review: "Я не перебірливий у їжі, але A La Tarantazza мене розпестила. Тепер я не можу їсти торт, якщо він не від них, і не думаю, що є краще місце для піци в цьому місті. Чи шкодую я? Ні за що! У кожного є своя комфортна їжа."
     }
 ]
 

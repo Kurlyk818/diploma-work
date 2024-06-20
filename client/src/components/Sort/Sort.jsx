@@ -6,13 +6,13 @@ export default function Sort({ sort }) {
 
     return (
         <div className="sorter">
-            <h3>Sort: </h3>
+            <h3>Сортування: </h3>
             <select
                 name="sorter"
                 id="sorter"
                 onChange={() => sort(selectElement)}
                 ref={selectElement}>
-                <option>-- Unsorted --</option>
+                <option>-- Не сортовано --</option>
                 <option>ASC</option>
                 <option>DESC</option>
             </select>

@@ -15,11 +15,11 @@ export default function CartProduct({ product, addProduct, removeProduct, remove
                 <img src={cartBow} alt="Cart Product Bow" className="cart-bow" />
             </div>
             <div className="cp-details-2">
-                <p>${(productObj.price * productObj.quantity).toFixed(2)}</p>
+                <p>{(productObj.price * productObj.quantity).toFixed(2)} грн</p>
                 {quantity === 0 ? (
                     <div>
-                        <p><strong>No Longer</strong></p>
-                        <p><strong>Available</strong></p>
+                        <p><strong>Більше</strong></p>
+                        <p><strong>Не доступно</strong></p>
                     </div>
                 ) : (
                     <div className="cp-actions">
@@ -41,7 +41,7 @@ export default function CartProduct({ product, addProduct, removeProduct, remove
                         type="button"
                         className="base-btn"
                         onClick={removeAll}>
-                        Remove
+                        Видалити
                     </button>
                 </div>
             </div>

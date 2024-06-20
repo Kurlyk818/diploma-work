@@ -45,32 +45,32 @@ export default function Navbar() {
         <ul className={menuIsOpen ? "nav-menu active" : "nav-menu"}>
           <li className="nav-item">
             <NavLink to="/about" className="nav-links" onClick={closeMobileMenu}>
-              About
+              Про нас
             </NavLink>
           </li>
           <li className="nav-item" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
             <NavLink to="/menu" className="nav-links" onClick={closeMobileMenu}>
-              Menu <img src={dropdown ? arrowUp : arrowDown} alt="Arrow Down" id="menu-arrow" />
+              Меню <img src={dropdown ? arrowUp : arrowDown} alt="Arrow Down" id="menu-arrow" />
             </NavLink>
             {dropdown && <Dropdown />}
           </li>
           <li className="nav-item">
             <NavLink to="/favorites" className="nav-links" onClick={closeMobileMenu}>
-              Favorites
+              Вподобання
             </NavLink>
           </li>
           {userRole === "admin" && (
     
               <li className="nav-item">
                 <NavLink to="/admin" className="nav-links" onClick={closeMobileMenu}>
-                  Admin
+                  Адмін
                 </NavLink>
               </li>
           )}
           {userRole === "admin" && (
           <li className="nav-item">
-                <NavLink to="/order-history" className="nav-links" onClick={closeMobileMenu}>
-                Order History
+                <NavLink to="/client-history" className="nav-links" onClick={closeMobileMenu}>
+                Замовлення клієнтів
                 </NavLink>
               </li>
             )}
@@ -78,13 +78,13 @@ export default function Navbar() {
           {userRole === "user" && (
             <li className="nav-item">
               <NavLink to="/order-history" className="nav-links" onClick={closeMobileMenu}>
-                Orders
+                Історія замовлень
               </NavLink>
             </li>
           )}
 
           <li className="nav-item">
-            <NavLink to="/cart" className="nav-links" onClick={closeMobileMenu}>
+          {isAuthenticated ? ( <NavLink to="/cart" className="nav-links" onClick={closeMobileMenu}>
               {width < 960 ? (
                 "My Cart"
               ) : (
@@ -93,14 +93,25 @@ export default function Navbar() {
                   {productsInCart.length > 0 ? <span>{totalQuantity}</span> : null}
                 </div>
               )}
-            </NavLink>
-          </li>{isAuthenticated ? ( <li className="nav-item">
+            </NavLink>) : ( <NavLink to="/login" className="nav-links" onClick={closeMobileMenu}>
+              {width < 960 ? (
+                "My Cart"
+              ) : (
+                <div className="cart-div">
+                  <img src={cart} alt="Shopping Cart" id="cart-img" />
+                  {productsInCart.length > 0 ? <span>{totalQuantity}</span> : null}
+                </div>
+              )}
+            </NavLink>) }
+           
+          </li>
+          {isAuthenticated ? ( <li className="nav-item">
               <NavLink to="/about" className="nav-links" onClick={() => dispatch(setLogout())}>
-                Logout
+                Вихід
               </NavLink>
             </li>) : ( <li className="nav-item">
               <NavLink to="/login" className="nav-links">
-                Login
+                Вхід
               </NavLink>
             </li>) }
          
