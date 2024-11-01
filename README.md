@@ -9,7 +9,6 @@ Fully responsive MERN project (restaurant with order and product management) ini
 - MongoDB server connection for data
 - loading, error, 404 missing pages
 
-**[Click Here to View a Demo Video](https://youtu.be/dqWILxE249U?si=JhyoggO5_mSAKYir)**
 
 ![A La Tarantazza main page](https://images2.imgbox.com/8e/89/gj9EAKRf_o.jpg)
 
